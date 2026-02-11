@@ -4,7 +4,7 @@
   --foreground: #ffffff;
   --background: #0a0a0a;
   --blue: #3b82f61a;
-  --gray: #2b313a3b;
+  --gray: #2b313a2d;
 }
 
 
@@ -24,3 +24,54 @@ body {
   flex-direction: column;
   gap: 0.75rem;
 }
+
+.titles {
+  @apply text-lg lg:text-xl font-semibold;
+}
+
+.heading-one{
+  @apply text-2xl md:text-3xl font-bold;
+}
+
+.heading-two {
+  @apply text-xl md:text-2xl font-semibold;
+}
+
+
+
+/* .bg-grid {
+  position: relative;
+  background-color: #0a0a0a;
+  overflow: hidden;
+} */
+
+
+/* Grid background layer */
+.bg-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;              /* behind content */
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(#1a1a1a 1px, transparent 1px),
+    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+
+/* Ensure content stays above */
+/* .bg-grid > * {
+  position: relative;
+  z-index: 1;
+} */
+

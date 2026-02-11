@@ -1,0 +1,18 @@
+[
+    {
+        "title": "authentication_jwt_and_OAuth",
+        "description": "Implemented user authentication using JWT and OAuth, enabling secure access to protected routes and resources in a Node.js application.",
+        "github_link": "https://github.com/krishaldeshemaru/authentication_jwt_and_OAuth",
+        "live_link": "https://authentication-jwt-and-oauth.vercel.app/"
+    },
+    {
+        "title": "RESTful API Development",
+        "description": "Designed and developed RESTful APIs using Node.js and Express, facilitating seamless communication between the frontend and backend of web applications.",
+        "github_link": "https://github.com/krishaldeshemaru/RESTful-API-Development"
+    },
+    {
+        "title": "Database Integration",
+        "description": "Integrated MongoDB with Node.js applications using Mongoose, enabling efficient data storage and retrieval for dynamic web applications.",
+        "github_link": "https://github.com/krishaldeshemaru/authentication_jwt_and_OAuth"
+    }
+]

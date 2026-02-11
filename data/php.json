@@ -1,0 +1,13 @@
+[
+    {
+        "title": "E-commerce Website",
+        "description": "Developed a fully functional e-commerce website using PHP and MySQL, featuring user registration, product catalog, shopping cart, and order management.",
+        "github_link": "https://github.com/krishaldeshemaru/E-commerce-Website",
+        "live_link": "https://e-commerce-website-krishaldeshemaru.vercel.app/"
+    },
+    {
+        "title": "Content Management System (CMS)",
+        "description": "Created a custom CMS using PHP, allowing users to manage website content, including pages, posts, and media, with an intuitive admin interface.",
+        "github_link": "https://github.com/krishaldeshemaru/Content-Management-System"
+    }
+]
