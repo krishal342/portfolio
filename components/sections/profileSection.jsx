@@ -4,7 +4,7 @@ import { flexWrapBox } from '../box/box'
 
 const profileSection = () => {
     return (
-        <div className='h-full w-full flex flex-col items-center justify-center gap-5 p-5 bg-grid'>
+        <div className='h-full w-full flex flex-col items-center justify-center gap-10 p-5  max-w-[1440px] mx-auto '>
 
             {/* Name */}
             <div className='flex flex-col items-center gap-2'>
@@ -15,8 +15,12 @@ const profileSection = () => {
                 <div className="flex items-center w-full">
                     <div className="grow border-t border-gray-500"></div>
                     <span className="mx-4 text-gray-500 heading-one">Backend Developer</span>
-                    <div className="grow border-t border-gray-400"></div>
+                    <div className="grow border-t border-gray-500"></div>
                 </div>
+            </div>
+            {/* quote */}
+            <div>
+                <span>I am a backend developer with a passion for building robust and efficient APIs. Programming is my hobby and I love to learn new things.</span>
             </div>
 
             {/* Skills and Programming Languages */}

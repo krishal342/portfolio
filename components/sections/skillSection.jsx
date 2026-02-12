@@ -4,60 +4,62 @@ import { flexColumnBox } from '../box/box'
 
 const skillSection = () => {
     return (
-        <div className='h-fullw-full flex flex-col items-center justify-center gap-5 p-5'>
+        <div className='h-full w-full flex flex-col gap-10 px-5 py-10 max-w-[1440px] mx-auto '>
 
-            {/* Backend Skills */}
-            <div className='w-full sm:w-[70%] lg:w-[60%] box items-center'>
-                <h1 className='heading-two'>Backend Skills</h1>
-                <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-4'>
+            <h1 className='heading-one border-l-8 py-2 pl-4 border-blue-500'>Skills</h1>
 
-                    {
-                        flexColumnBox({
-                            title: 'API',
-                            items: ['REST API', 'GraphQL API']
-                        })
-                    }
-                    {
-                        flexColumnBox({
-                            title: 'Database',
-                            items: ['PostgreSQL', 'MongoDB']
-                        })
-                    }
-                    {
-                        flexColumnBox({
-                            title: 'Authentication',
-                            items: ['JWT', 'OAuth']
-                        })
-                    }
+            <div className="w-full flex flex-col items-center gap-5">
+                <div className='w-full sm:w-[80%] lg:w-[70%] box items-center'>
+                    <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-4'>
+
+                        {
+                            flexColumnBox({
+                                title: 'API',
+                                items: ['REST API', 'GraphQL API']
+                            })
+                        }
+                        {
+                            flexColumnBox({
+                                title: 'Database',
+                                items: ['PostgreSQL', 'MongoDB']
+                            })
+                        }
+                        {
+                            flexColumnBox({
+                                title: 'Authentication',
+                                items: ['JWT', 'OAuth','OTP']
+                            })
+                        }
+
+                        {
+                            flexColumnBox({
+                                title: 'Version Control',
+                                items: ['Git', 'GitHub']
+                            })
+                        }
+                        {
+                            flexColumnBox({
+                                title: 'Deployment',
+                                items: ['Docker']
+                            })
+                        }
+                        {
+                            flexColumnBox({
+                                title: 'Hosting',
+                                items: ['Render', 'Vercel']
+                            })
+                        }
+                        {
+                            flexColumnBox({
+                                title: 'Tools',
+                                items: ['Postman']
+                            })
+                        }
+
+                    </div>
 
                 </div>
-            </div>
 
-            {/* DevOps Tools */}
-            <div className='w-full sm:w-[70%] lg:w-[60%] box items-center'>
-                {/* <h1 className='text-xl md:text-2xl font-semibold'>DevOps Tools</h1> */}
-                <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-4'>
-
-                    {
-                        flexColumnBox({
-                            title: 'Version Control',
-                            items: ['Git', 'GitHub']
-                        })
-                    }
-                    {
-                        flexColumnBox({
-                            title: 'Deployment',
-                            items: ['Docker']
-                        })
-                    }
-                    {
-                        flexColumnBox({
-                            title: 'Hosting',
-                            items: ['Render', 'Vercel']
-                        })
-                    }
-
-                </div>
             </div>
         </div>
     )

@@ -18,16 +18,16 @@ const projectSection = () => {
   },[activeTab])
 
   return (
-    <div className='h-full w-full flex flex-col gap-5 bg-[var(--gray)] p-5'>
+    <div className='h-full w-full flex flex-col gap-10 px-5 py-10 max-w-[1440px] mx-auto '>
 
-      <h1 className='heading-one'>Projects</h1>
+      <h1 className='heading-one border-l-8 py-2 pl-4 border-blue-500'>Projects</h1>
 
       <div>
         <ul className='flex gap-2'>
           <li className={`heading-two px-6 py-3 ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
           <li className={`heading-two px-6 py-3 ${activeTab === 'php' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('php')}>PHP</li>
         </ul>
-        <div className="box rounded-none! ">
+        <div className="box rounded-none! items-center ">
 
           {
             projects.map((project,index) => {

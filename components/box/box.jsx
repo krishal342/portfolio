@@ -7,7 +7,7 @@ export const flexWrapBox = (prop) => {
       <ul className='flex flex-wrap gap-2'>
         {
           prop.items.map((item, index) => (
-            <li key={index} className='px-4 py-1 bg-blue-500/10 w-fit text-sm rounded-full'>{item}</li>
+            <li key={index} className='px-4 py-1 bg-blue-500/10 w-fit text-sm lg:text-base rounded-full'>{item}</li>
           ))
         }
       </ul>
@@ -23,7 +23,7 @@ export const flexColumnBox = (prop) => {
       <ul className='flex gap-2 flex-col'>
         {
           prop.items.map((item, index) => (
-            <li key={index} className='px-4 py-1 bg-blue-500/10 w-fit text-sm rounded-full list-disc list-inside'>{item}</li>
+            <li key={index} className='px-4 py-1 bg-blue-500/10 w-fit text-sm lg:text-base rounded-full list-disc list-inside'>{item}</li>
           ))
         }
       </ul>
