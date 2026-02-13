@@ -16,7 +16,7 @@ const ProjectBox = (prop) => {
                 {/* Toggle button */}
                 <button
                     onClick={() => setVisible(!visible)}
-                    className=" text-blue-500 hover:underline text-sm"
+                    className=" text-blue-500 hover:underline text-sm cursor-pointer"
                 >
                     {visible ?
 

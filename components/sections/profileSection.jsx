@@ -20,7 +20,7 @@ const profileSection = () => {
             </div>
             {/* quote */}
             <div>
-                <span>I am a backend developer with a passion for building robust and efficient APIs. Programming is my hobby and I love to learn new things.</span>
+                <span>"Backend development isn't just my skill set, it's my passion."</span>
             </div>
 
             {/* Skills and Programming Languages */}

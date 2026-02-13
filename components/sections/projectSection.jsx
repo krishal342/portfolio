@@ -24,9 +24,8 @@ const projectSection = () => {
 
       <div>
         <ul className='flex gap-2'>
-          <li className={`heading-two px-6 py-3 ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
-          {/* <li className={`heading-two px-6 py-3 ${activeTab === 'php' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('php')}>PHP</li> */}
-          <li className={`heading-two px-6 py-3 ${activeTab === 'nextjs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nextjs')}>Next.js</li>
+          <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
+          <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nextjs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nextjs')}>Next.js</li>
         </ul>
 
         <div className="box rounded-none">
