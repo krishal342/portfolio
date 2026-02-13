@@ -12,10 +12,11 @@ const NavBar = () => {
             </div>
             <div className='flex gap-10'>
 
-                <ul className='flex gap-5 '>
-                    <a>Home</a>
-                    <a>Project</a>
-                    <a>Technologies</a>
+                <ul className='flex  '>
+                    <a href='#profile' className="navbar-link">Home</a>
+                    <a href="#skills" className="navbar-link">Skills</a>
+                    <a href="#projects" className="navbar-link">Projects</a>
+                    <a href='#contact' className="navbar-link">Contact</a>
                 </ul>
 
                 <div className='flex justify-center items-center gap-5 '>

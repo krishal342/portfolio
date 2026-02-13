@@ -13,16 +13,16 @@ const Home = () => {
             <div className="fixed top-0 left-0 w-full z-10 bg-[var(--gray)] backdrop-blur-sm " >
                     <NavBar />
             </div>
-            <div className='h-screen bg-grid'>
+            <div id='profile' className='h-screen bg-grid'>
                 <ProfileSection />
             </div>
-            <div className="bg-[var(--bg-blue)]">
+            <div id='skills' className="bg-[var(--bg-blue)]">
                 <SkillSection />
             </div>
-            <div >
+            <div id='projects' >
                 <ProjectSection />
             </div>
-            <div className="bg-[var(--bg-blue)]">
+            <div id='contact' className="bg-[var(--bg-blue)]">
                 <ContactSection />
             </div>
         </div>

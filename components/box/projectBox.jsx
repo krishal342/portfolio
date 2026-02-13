@@ -5,10 +5,13 @@ const ProjectBox = (prop) => {
     const [visible, setVisible] = useState(false);
 
     return (
-        <div className="w-[80%] box bg-[var(--bg-blue)]!">
+        <div className="w-full box bg-blue-500/10! ">
 
             <div className="flex items-center justify-between">
+                <div>
                 <h2 className="titles">{prop.project.title}</h2>
+                <p className="text-sm text-gray-400/80">{prop.project.context}</p>
+                </div>
 
                 {/* Toggle button */}
                 <button
@@ -36,7 +39,7 @@ const ProjectBox = (prop) => {
                     </p>
                 </div>
             )}
-            <div className="flex gap-5 text-xs">
+            <div className="flex gap-3 text-xs">
 
                 {/* github link */}
                 {

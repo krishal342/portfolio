@@ -13,9 +13,9 @@ const profileSection = () => {
                     <h1 className="text-4xl md:text-6xl font-bold text-blue-500 text-center">Krishal Deshemaru</h1>
                 </div>
                 <div className="flex items-center w-full">
-                    <div className="grow border-t border-gray-500"></div>
-                    <span className="mx-4 text-gray-500 heading-one">Backend Developer</span>
-                    <div className="grow border-t border-gray-500"></div>
+                    <div className="grow border-t border-gray-400"></div>
+                    <span className="mx-4 text-gray-400 heading-one">Backend Developer</span>
+                    <div className="grow border-t border-gray-400"></div>
                 </div>
             </div>
             {/* quote */}

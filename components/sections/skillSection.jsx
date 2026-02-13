@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { flexColumnBox } from '../box/box'
+import {  flexWrapBox } from '../box/box'
 
 const skillSection = () => {
     return (
@@ -13,44 +13,44 @@ const skillSection = () => {
                     <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-4'>
 
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'API',
                                 items: ['REST API', 'GraphQL API']
                             })
                         }
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'Database',
                                 items: ['PostgreSQL', 'MongoDB']
                             })
                         }
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'Authentication',
                                 items: ['JWT', 'OAuth','OTP']
                             })
                         }
 
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'Version Control',
                                 items: ['Git', 'GitHub']
                             })
                         }
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'Deployment',
                                 items: ['Docker']
                             })
                         }
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'Hosting',
                                 items: ['Render', 'Vercel']
                             })
                         }
                         {
-                            flexColumnBox({
+                            flexWrapBox({
                                 title: 'Tools',
                                 items: ['Postman']
                             })

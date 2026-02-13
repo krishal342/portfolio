@@ -1,5 +1,5 @@
 'use client';
-import { useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 import ProjectBox from '../box/projectBox'
 
@@ -15,7 +15,7 @@ const projectSection = () => {
       setProjects(data);
     }
     fetchData();
-  },[activeTab])
+  }, [activeTab])
 
   return (
     <div className='h-full w-full flex flex-col gap-10 px-5 py-10 max-w-[1440px] mx-auto '>
@@ -27,16 +27,29 @@ const projectSection = () => {
           <li className={`heading-two px-6 py-3 ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
           <li className={`heading-two px-6 py-3 ${activeTab === 'php' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('php')}>PHP</li>
         </ul>
-        <div className="box rounded-none! items-center ">
 
-          {
-            projects.map((project,index) => {
-              return (
-                <ProjectBox key={index} project={project} />
-              )
-            })
-          }
+        <div className="box rounded-none">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Left column (odd indexes) */}
+            <div className="flex flex-col gap-4">
+              {projects.map((project, index) =>
+                index % 2 !== 0 ? (
+                  <ProjectBox key={index} project={project} />
+                ) : null
+              )}
+            </div>
+
+            {/* Right column (even indexes) */}
+            <div className="flex flex-col gap-4">
+              {projects.map((project, index) =>
+                index % 2 === 0 ? (
+                  <ProjectBox key={index} project={project} />
+                ) : null
+              )}
+            </div>
+          </div>
         </div>
+
       </div>
 
     </div>

@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 
-const filePath = path.join(process.cwd(),"data","nodejs.json");
 
-export async function GET(request) {
+export async function GET(request, { params }) {
     try{
-        const data = fs.readFileSync(filePath, "utf-8");
+        const { slug } = await params;
+
+        const filePath = path.join(process.cwd(),"data",`${slug}.json`);
+
+        const data = await fs.readFile(filePath, "utf-8");
         return NextResponse.json(JSON.parse(data));
     }catch(error){
         return NextResponse.json({ error: "Failed to read data" }, { status: 500 });
