@@ -34,7 +34,7 @@ const ProjectBox = (prop) => {
             {/* Description (hidden until button clicked) */}
             {visible && (
                 <div className=" max-h-[100] overflow-y-auto">
-                    <p className="">
+                    <p className="px-3 text-gray-200">
                         {prop.project.description}
                     </p>
                 </div>
@@ -44,14 +44,20 @@ const ProjectBox = (prop) => {
                 {/* github link */}
                 {
                     prop.project.github_link && (
-                        <a href="" className="link">GitHub</a>
+                        <a href={prop.project.github_link} className="link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    )
+                }
+
+                {
+                    prop.project.api_link && (
+                        <a href={prop.project.api_link} className="link" target="_blank" rel="noopener noreferrer">API</a>
                     )
                 }
 
                 {/* live link */}
                 {
                     prop.project.live_link && (
-                        <a href="" className="link">Live Link</a>
+                        <a href={prop.project.live_link} className="link" target="_blank" rel="noopener noreferrer">Live Link</a>
                     )
                 }
             </div>

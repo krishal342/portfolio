@@ -1,39 +1,40 @@
 [
     {
         "title": "authentication",
-        "context": "jwt, OAuth and OTP",
-        "description": "Implemented user authentication using JWT and OAuth, enabling secure access to protected routes and resources in a Node.js application.",
-        "github_link": "https://github.com/krishaldeshemaru/authentication_jwt_and_OAuth",
-        "live_link": "https://authentication-jwt-and-oauth.vercel.app/"
+        "context": "JWT, OAuth and OTP",
+        "description": "A full-stack authentication project built with Node.js (Express) REST API for the backend and Next.js for the frontend. This project demonstrates secure user login and registration flows using JSON Web Tokens (JWT) and OAuth 2.0 providers (e.g., Google, GitHub) and resend to send OTP to reset password.",
+        "github_link": "https://github.com/krishal342/authentication-JWT_and_OAuth",
+        "live_link": "https://auth-frontend-xi-one.vercel.app/"
     },
     {
-        "title": "RESTful API Development",
-        "context": "Node.js and Express",
-        "description": "Designed and developed RESTful APIs using Node.js and Express, facilitating seamless communication between the frontend and backend of web applications.",
-        "github_link": "https://github.com/krishaldeshemaru/RESTful-API-Development"
+        "title": "multer configuration",
+        "context": "multer and cloudinary",
+        "description": "A Node.js project demonstrating how to configure Multer for handling file uploads and integrate with Cloudinary for cloud-based storage. This project provides a clean and scalable solution for managing user-uploaded files such as images, documents, or media.",
+        "github_link": "https://github.com/krishal342/multer-configuration",
+        "live_link": "https://multer-fk3v.onrender.com"
     },
     {
-        "title": "Database Integration",
+        "title": "mongodb connection",
         "context": "MongoDB and Mongoose",
-        "description": "Integrated MongoDB with Node.js applications using Mongoose, enabling efficient data storage and retrieval for dynamic web applications.",
-        "github_link": "https://github.com/krishaldeshemaru/authentication_jwt_and_OAuth"
+        "description": "A simple project demonstrating how to connect a MongoDB database using Mongoose in a Node.js environment and perform CRUD operation. This serves as a starter template for developers who want to learn or implement database connectivity with MongoDB.",
+        "github_link": "https://github.com/krishal342/mongodb-connection"
     },{
-        "title": "authentication",
-        "context": "jwt, OAuth and OTP",
-        "description": "Implemented user authentication using JWT and OAuth, enabling secure access to protected routes and resources in a Node.js application.",
-        "github_link": "https://github.com/krishaldeshemaru/authentication_jwt_and_OAuth",
-        "live_link": "https://authentication-jwt-and-oauth.vercel.app/"
+        "title": "PostgreSQL connection",
+        "context": "PostgreSQL and Prisma",
+        "description": "A simple project demonstrating how to connect a PostgreSQL database using Prisma ORM in a Node.js environment and perform CRUD operation. This serves as a starter template for developers who want to learn or implement database connectivity with Prisma.",
+        "github_link": "https://github.com/krishal342/postgresql-connection",
+        "api_link": "https://postgresql-connection.onrender.com"
     },
     {
-        "title": "RESTful API Development",
-        "context": "Node.js and Express",
-        "description": "Designed and developed RESTful APIs using Node.js and Express, facilitating seamless communication between the frontend and backend of web applications.",
-        "github_link": "https://github.com/krishaldeshemaru/RESTful-API-Development"
+        "title": "Vanilla GraphQL API Development",
+        "context": "Node.js, Express, express-graphql, graphql",
+        "description": "DA lightweight project showcasing how to build a GraphQL API in Node.js using vanilla GraphQL. This template provides a clean, minimal setup that’s perfect for learning the fundamentals of GraphQL.",
+        "github_link": "https://github.com/krishal342/vanilla-graphQL"
     },
     {
-        "title": "Database Integration",
-        "context": "MongoDB and Mongoose",
-        "description": "Integrated MongoDB with Node.js applications using Mongoose, enabling efficient data storage and retrieval for dynamic web applications.",
-        "github_link": "https://github.com/krishaldeshemaru/authentication_jwt_and_OAuth"
+        "title": "Apollo GraphQL API Development",
+        "context": "Node.js, Express, Apollo Server, GraphQL",
+        "description": "A project demonstrating how to build a GraphQL API using Apollo Server with Node.js.",
+        "github_link": "https://github.com/krishal342/apollo-graphql"
     }
 ]

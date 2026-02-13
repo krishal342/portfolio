@@ -37,12 +37,7 @@ const skillSection = () => {
                                 items: ['Git', 'GitHub']
                             })
                         }
-                        {
-                            flexWrapBox({
-                                title: 'Deployment',
-                                items: ['Docker']
-                            })
-                        }
+                        
                         {
                             flexWrapBox({
                                 title: 'Hosting',

@@ -1,0 +1,9 @@
+[
+    {
+        "title":"authentication",
+        "context":"next.js, react-hook-form",
+        "description":"A full-stack authentication project built with Node.js (Express) REST API for the backend and Next.js for the frontend. This project demonstrates secure user login and registration flows using JSON Web Tokens (JWT) and OAuth 2.0 providers (e.g., Google, GitHub) and resend to send OTP to reset password.",
+        "github_link":"https://github.com/krishal342/authentication-frontend",
+        "live_link":"https://auth-frontend-xi-one.vercel.app/"
+    }
+]

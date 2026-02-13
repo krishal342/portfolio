@@ -25,7 +25,8 @@ const projectSection = () => {
       <div>
         <ul className='flex gap-2'>
           <li className={`heading-two px-6 py-3 ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
-          <li className={`heading-two px-6 py-3 ${activeTab === 'php' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('php')}>PHP</li>
+          {/* <li className={`heading-two px-6 py-3 ${activeTab === 'php' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('php')}>PHP</li> */}
+          <li className={`heading-two px-6 py-3 ${activeTab === 'nextjs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nextjs')}>Next.js</li>
         </ul>
 
         <div className="box rounded-none">
@@ -33,7 +34,7 @@ const projectSection = () => {
             {/* Left column (odd indexes) */}
             <div className="flex flex-col gap-4">
               {projects.map((project, index) =>
-                index % 2 !== 0 ? (
+                index % 2 === 0 ? (
                   <ProjectBox key={index} project={project} />
                 ) : null
               )}
@@ -42,7 +43,7 @@ const projectSection = () => {
             {/* Right column (even indexes) */}
             <div className="flex flex-col gap-4">
               {projects.map((project, index) =>
-                index % 2 === 0 ? (
+                index % 2 !== 0 ? (
                   <ProjectBox key={index} project={project} />
                 ) : null
               )}

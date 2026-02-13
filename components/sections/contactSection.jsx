@@ -13,25 +13,25 @@ const ContactSection = () => {
                 <MessageForm />
             </div>
 
-            <div className="flex flex-wrap  justify-center items-center mb-10">
+            <div className="flex justify-center items-center mb-10 flex-col sm:flex-row">
                 {/* First block */}
-                <div className="px-8 border-r border-gray-300">
-                    <span>Email:</span>
+                <div className="w-full pb-8 sm:pb-0 sm:pr-8 border-b sm:border-b-0 sm:border-r border-gray-300 flex flex-col items-center justify-center">
+                    <span>Email</span>
                     <span className="cursor-pointer">
                         <CopyContent content="krishal342@gmail.com" />
                     </span>
                 </div>
 
                 {/* Second block */}
-                <div className="px-8 border-r border-gray-300">
-                    <span>WhatsApp:</span>
+                <div className="w-full py-8 sm:py-0 sm:px-8 border-b sm:border-b-0 sm:border-r border-gray-300 flex flex-col items-center justify-center">
+                    <span>WhatsApp</span>
                     <span className="cursor-pointer">
                         <CopyContent content="+977 9841995332" />
                     </span>
                 </div>
 
                 {/* Third block */}
-                <div className="px-8 flex justify-center items-center gap-8">
+                <div className="w-full pt-8 sm:pt-0 sm:pl-8 flex justify-center items-center gap-8">
                     <a
                         href="https://github.com/krishal342"
                         target="_blank"

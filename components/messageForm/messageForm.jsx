@@ -33,7 +33,7 @@ const MessageForm = () => {
 
     return (
         <div className='flex justify-center'>
-            <form action="" className='flex flex-col gap-5 w-[30%]' onSubmit={handleSubmit}>
+            <form action="" className='flex flex-col gap-5 w-full md:w-[50%] lg:w-[40%] xl:w-[30%]' onSubmit={handleSubmit}>
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="name" className='text-gray-500 text-xl'>Name:</label>
                     <input type="text" name="name" id="name" placeholder='Your Name' className='border-2 border-gray-600 rounded-lg px-4 py-2 focus:ring focus:ring-blue-500 focus:border-blue-500 outline-none' />
