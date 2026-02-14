@@ -9,12 +9,13 @@ const projectSection = () => {
   const [filesName, setFilesName] = useState([]);
   const [activeTab, setActiveTab] = useState("Node.js");
 
+
   useEffect(() => {
     const fetchFileName = async () => {
       const response = await fetch(`/api/filesName`);
       const data = await response.json();
       setFilesName(data);
-      // setActiveTab(data[0]);
+      setActiveTab("Node.js");
     }
 
     fetchFileName();
@@ -30,20 +31,21 @@ const projectSection = () => {
     fetchData();
   }, [activeTab])
 
+
+
+
   return (
     <div className='h-full w-full flex flex-col gap-10 px-5 py-10 max-w-[1440px] mx-auto '>
 
       <h1 className='heading-one border-l-8 py-2 pl-4 border-blue-500'>Projects</h1>
 
       <div>
-        <ul className='flex gap-2'>
+        <ul className='flex gap-2 overflow-y-auto'>
           {
             filesName.map((file, index) => (
               <li key={index} className={`heading-two px-6 py-3 cursor-pointer ${activeTab === file ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab(file)}>{file}</li>
             ))
           }
-          {/* <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
-          <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nextjs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nextjs')}>Next.js</li> */}
         </ul>
 
         <div className="box rounded-none">
