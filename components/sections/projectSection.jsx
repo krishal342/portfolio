@@ -6,9 +6,22 @@ import ProjectBox from '../box/projectBox'
 const projectSection = () => {
 
   const [projects, setProjects] = useState([]);
-  const [activeTab, setActiveTab] = useState('nodejs');
+  const [filesName, setFilesName] = useState([]);
+  const [activeTab, setActiveTab] = useState("Node.js");
 
   useEffect(() => {
+    const fetchFileName = async () => {
+      const response = await fetch(`/api/filesName`);
+      const data = await response.json();
+      setFilesName(data);
+      // setActiveTab(data[0]);
+    }
+
+    fetchFileName();
+  },[])
+
+  useEffect(() => {
+
     const fetchData = async () => {
       const response = await fetch(`/api/project/${activeTab}`);
       const data = await response.json();
@@ -24,8 +37,13 @@ const projectSection = () => {
 
       <div>
         <ul className='flex gap-2'>
-          <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
-          <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nextjs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nextjs')}>Next.js</li>
+          {
+            filesName.map((file, index) => (
+              <li key={index} className={`heading-two px-6 py-3 cursor-pointer ${activeTab === file ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab(file)}>{file}</li>
+            ))
+          }
+          {/* <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nodejs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nodejs')}>Node.js</li>
+          <li className={`heading-two px-6 py-3 cursor-pointer ${activeTab === 'nextjs' ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab('nextjs')}>Next.js</li> */}
         </ul>
 
         <div className="box rounded-none">
