@@ -7,7 +7,7 @@ const projectSection = () => {
 
   const [projects, setProjects] = useState([]);
   const [filesName, setFilesName] = useState([]);
-  const [activeTab, setActiveTab] = useState("Node.js");
+  const [activeTab, setActiveTab] = useState("Express.js");
 
 
   useEffect(() => {
@@ -15,7 +15,6 @@ const projectSection = () => {
       const response = await fetch(`/api/filesName`);
       const data = await response.json();
       setFilesName(data);
-      setActiveTab("Node.js");
     }
 
     fetchFileName();

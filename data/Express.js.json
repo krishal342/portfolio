@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Authentication",
     "context": "JWT, OAuth and OTP",
-    "description": "A full-stack authentication project built with Node.js (Express) REST API for the backend and Next.js for the frontend. This project demonstrates secure user login and registration flows using JSON Web Tokens (JWT) and OAuth 2.0 providers (e.g., Google, GitHub) and resend to send OTP to reset password.",
+    "description": "A full-stack authentication project built in  Node.js environment using Express.js REST API for the backend and Next.js for the frontend. This project demonstrates secure user login and registration flows using JSON Web Tokens (JWT) and OAuth 2.0 providers (e.g., Google, GitHub) and resend to send OTP to reset password.",
     "github_link": "https://github.com/krishal342/authentication-JWT_and_OAuth",
     "live_link": "https://auth-frontend-xi-one.vercel.app/"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Multer configuration",
     "context": "multer and cloudinary",
-    "description": "A Node.js project demonstrating how to configure Multer for handling file uploads and integrate with Cloudinary for cloud-based storage. This project provides a clean and scalable solution for managing user-uploaded files such as images, documents, or media.",
+    "description": "A Express.js project demonstrating in Node.js environment how to configure Multer for handling file uploads and integrate with Cloudinary for cloud-based storage. This project provides a clean and scalable solution for managing user-uploaded files such as images, documents, or media.",
     "github_link": "https://github.com/krishal342/multer-configuration",
     "live_link": "https://multer-fk3v.onrender.com"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Post.it",
     "context": "Social Media clone",
-    "description": "A project that replicates the core features of a social media platform, buit with Node.js (Express) REST API for backend and Next.js for frontend. It allows user to interact through post, likes, comments, and profile management. This project provides a practical example of how to build a full-stack social media application using Node.js and Next.js.",
+    "description": "A project that replicates the core features of a social media platform, built in Node.js environment using Express.js REST API for backend and Next.js for frontend. It allows user to interact through post, likes, comments, and profile management. This project provides a practical example of how to build a full-stack social media application using Express.js and Next.js.",
     "github_link": "https://github.com/krishal342/post_it_backend_v1",
     "live_link": "https://post-it-murex-phi.vercel.app"
   },
@@ -42,14 +42,14 @@
     "id": 6,
     "title": "Vanilla GraphQL API ",
     "context": "Node.js, Express, express-graphql, graphql",
-    "description": "A lightweight project showcasing how to build a GraphQL API in Node.js using vanilla GraphQL. This template provides a clean, minimal setup that’s perfect for learning the fundamentals of GraphQL.",
+    "description": "A lightweight project showcasing how to build a GraphQL API in Node.js environment using vanilla GraphQL. This template provides a clean, minimal setup that`s perfect for learning the fundamentals of GraphQL.",
     "github_link": "https://github.com/krishal342/vanilla-graphQL"
   },
   {
     "id": 7,
     "title": "Apollo GraphQL API ",
     "context": "Node.js, Express, Apollo Server, GraphQL",
-    "description": "A project demonstrating how to build a GraphQL API using Apollo Server with Node.js.",
+    "description": "A project demonstrating how to build a GraphQL API using Apollo Server in Node.js environment with Express.js.",
     "github_link": "https://github.com/krishal342/apollo-graphql"
   }
 ]
