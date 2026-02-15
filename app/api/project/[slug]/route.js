@@ -1,52 +1,66 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import { prisma } from "@/lib/prisma";
 
 
-export async function GET(request, { params }) {
+// get all projects of a framework
+export async function GET(request, { params}){
     try{
         const { slug } = await params;
 
-        const filePath = path.join(process.cwd(),"data",`${slug}.json`);
+        const framework = await prisma.framework.findUnique({
+            where: {
+                name: slug
+            },
+            include: {
+                projects: true,
+            }
+        });
 
-        const data = await fs.readFile(filePath, "utf-8");
-        return NextResponse.json(JSON.parse(data));
-    }catch(error){
-        return NextResponse.json({ messgae: "Failed to read data", error:error });
+        return NextResponse.json(framework.projects);
+    }catch(err){
+        return NextResponse.json({error:err.message},{status:500});
     }
-    
 }
 
-export async function POST(request, {params}) {
+// create a project of a framework
+export async function POST(request, { params}){
     try{
-
         const { slug } = await params;
 
         const { title, context, description, github_link, live_link, api_link } = await request.json();
 
-        const filePath = path.join(process.cwd(),"data",`${slug}.json`);
+        let framework = await prisma.framework.findUnique({
+            where: {
+                name: slug
+            }
+        });
 
-        let existingData = [];
-        let lengthOfData = 0;
-        try{
-            const fileContent = await fs.readFile(filePath, "utf-8");
-            console.log(fileContent);
-            existingData = JSON.parse(fileContent);
-            lengthOfData = existingData.length;
-        }catch(error){
-            // if file does not exist or is empty, start with an empty array
-            existingData = [];
-            lengthOfData = 0;
+        if(!framework){
+            framework = await prisma.framework.create({
+                data: {
+                    name: slug
+                }
+            })
         }
 
-        existingData.push({id:lengthOfData + 1, title, context, description, github_link, live_link, api_link });
+        const project = await prisma.project.create({
+            data: {
+                title,
+                context,
+                description,
+                github_link,
+                live_link,
+                api_link,
+                framework:{
+                    connect:{
+                        id:framework.id
+                    }
+                }
+            }
+        });
 
-        await fs.writeFile(filePath, JSON.stringify(existingData,null,2));
-
-
-        return NextResponse.json({success:true},{status:200});
-
-    }catch(error){
-        return NextResponse.json({ message: "Failed to write data", error:error });
+        return NextResponse.json(project);
+    }catch(err){
+        return NextResponse.json({error:err.message},{status:500});
     }
 }

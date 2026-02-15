@@ -6,15 +6,15 @@ import ProjectBox from '../box/projectBox'
 const projectSection = () => {
 
   const [projects, setProjects] = useState([]);
-  const [filesName, setFilesName] = useState([]);
+  const [frameworkName, setFrameworkName] = useState([]);
   const [activeTab, setActiveTab] = useState("Express.js");
 
 
   useEffect(() => {
     const fetchFileName = async () => {
-      const response = await fetch(`/api/filesName`);
+      const response = await fetch(`/api/frameworkName`);
       const data = await response.json();
-      setFilesName(data);
+      setFrameworkName(data);
     }
 
     fetchFileName();
@@ -41,8 +41,8 @@ const projectSection = () => {
       <div>
         <ul className='flex gap-2 overflow-y-auto'>
           {
-            filesName.map((file, index) => (
-              <li key={index} className={`heading-two px-6 py-3 cursor-pointer ${activeTab === file ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab(file)}>{file}</li>
+            frameworkName.map((file, index) => (
+              <li key={index} className={`heading-two px-6 py-3 cursor-pointer ${activeTab === file.name ? 'bg-[var(--gray)]' : ''}`} onClick={() => setActiveTab(file.name)}>{file.name}</li>
             ))
           }
         </ul>

@@ -2,7 +2,11 @@ import React from 'react'
 
 import { flexWrapBox } from '../box/box'
 
-const profileSection = () => {
+const profileSection = async () => {
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`);
+    const data = await response.json();
+
     return (
         <div className='h-full w-full flex flex-col items-center justify-center gap-10 p-5  max-w-[1440px] mx-auto '>
 
@@ -20,23 +24,40 @@ const profileSection = () => {
             </div>
             {/* quote */}
             <div>
-                <span>"Backend development isn't just my skill set, it's my passion."</span>
+                {
+                    data.quote ?
+                        <span>
+                            "{data.quote}"
+                        </span>
+                        :
+                        <span>
+                            "The best way to predict the future is to create it."
+                        </span>
+
+                }
             </div>
 
             {/* Skills and Programming Languages */}
             <div className=' w-full sm:w-[70%] lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-5'>
-                {
-                    flexWrapBox({
-                        title: 'Frameworks & Libraries',
-                        items: ['Node.js', 'Express.js', 'Next.js']
-                    })
-                }
-                {
-                    flexWrapBox({
-                        title: 'Programming Languages',
-                        items: ['JavaScript', 'PHP']
-                    })
-                }
+                <div>
+
+                    {
+                        flexWrapBox({
+                            title: 'Frameworks & Libraries',
+                            items: data.libraries
+                        })
+                    }
+                </div>
+
+                <div>
+                    {
+                        flexWrapBox({
+                            title: 'Programming Languages',
+                            items: data.languages
+                        })
+                    }
+
+                </div>
             </div>
 
             {/* Scroll to explore with animation */}

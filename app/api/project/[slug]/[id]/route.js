@@ -1,30 +1,54 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import { prisma } from "@/lib/prisma";
 
-export async function PUT(request , {params}){
-    try{
+
+export async function PUT(request, { params }) {
+    try {
         const { slug, id } = await params;
 
         const body = await request.json();
 
-        const filePath = path.join(process.cwd(),"data",`${slug}.json`);
+        let project = await prisma.project.findUnique({
+            where:{
+                id
+            }
+        });
 
-        const fileContent = await fs.readFile(filePath, "utf-8");
-        let projects = JSON.parse(fileContent);
-
-        const projectIndex = projects.findIndex((project) => project.id === parseInt(id));
-
-        if (projectIndex === -1) {
+        if (!project) {
             return NextResponse.json({ error: "Project not found" }, { status: 404 });
         }
 
-        projects[projectIndex] = { ...projects[projectIndex], ...body };
+        project = {
+            ...project,
+            ...body
+        };
 
-        await fs.writeFile(filePath, JSON.stringify(projects, null, 2));
+        const updatedProject = await prisma.project.update({
+            where: {
+                id
+            },
+            data: project
+        });
 
-        return NextResponse.json({success:true},{status:200});
-    }catch(error){
-        return NextResponse.json({ error: "Failed to update data" }, { status: 500 });
+        return NextResponse.json(updatedProject);
+
+    } catch (err) {
+        return NextResponse.json({ error: err.message }, { status: 500 });
+    }
+}
+
+export async function DELETE(request, { params }) {
+    try {
+        const { slug, id } = await params;
+
+        const project = await prisma.project.delete({
+            where: {
+                id
+            }
+        });
+
+        return NextResponse.json({message:"Project deleted successfully", project});
+    } catch (err) {
+        return NextResponse.json({ error: err.message }, { status: 500 });
     }
 }
