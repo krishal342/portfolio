@@ -5,7 +5,9 @@ import { flexWrapBox } from '../box/box'
 
 const skillSection = async () => {
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skill`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skill`,{
+        cache: 'no-store'
+    });
     const data = await response.json();
 
     return (

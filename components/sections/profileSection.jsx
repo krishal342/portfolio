@@ -4,7 +4,9 @@ import { flexWrapBox } from '../box/box'
 
 const profileSection = async () => {
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`,{
+        cache: 'no-store'
+    });
     const data = await response.json();
 
     return (
