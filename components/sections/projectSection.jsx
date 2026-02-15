@@ -8,6 +8,7 @@ const projectSection = () => {
   const [projects, setProjects] = useState([]);
   const [frameworkName, setFrameworkName] = useState([]);
   const [activeTab, setActiveTab] = useState("Express.js");
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -18,14 +19,24 @@ const projectSection = () => {
     }
 
     fetchFileName();
-  },[])
+  }, [])
 
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch(`/api/project/${activeTab}`);
-      const data = await response.json();
-      setProjects(data);
+      setLoading(true);
+      try{
+
+        const response = await fetch(`/api/project/${activeTab}`);
+        const data = await response.json();
+        setProjects(data);
+      }
+      catch(err){
+        console.error(err.message);
+      }
+      finally{
+        setLoading(false);
+      }
     }
     fetchData();
   }, [activeTab])
@@ -48,25 +59,30 @@ const projectSection = () => {
         </ul>
 
         <div className="box rounded-none">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Left column (odd indexes) */}
-            <div className="flex flex-col gap-4">
-              {projects.map((project, index) =>
-                index % 2 === 0 ? (
-                  <ProjectBox key={index} project={project} />
-                ) : null
-              )}
-            </div>
+          {
+            loading ?
+              <div className='loader'></div>
+              :
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Left column (odd indexes) */}
+                <div className="flex flex-col gap-4">
+                  {projects.map((project, index) =>
+                    index % 2 === 0 ? (
+                      <ProjectBox key={index} project={project} />
+                    ) : null
+                  )}
+                </div>
 
-            {/* Right column (even indexes) */}
-            <div className="flex flex-col gap-4">
-              {projects.map((project, index) =>
-                index % 2 !== 0 ? (
-                  <ProjectBox key={index} project={project} />
-                ) : null
-              )}
-            </div>
-          </div>
+                {/* Right column (even indexes) */}
+                <div className="flex flex-col gap-4">
+                  {projects.map((project, index) =>
+                    index % 2 !== 0 ? (
+                      <ProjectBox key={index} project={project} />
+                    ) : null
+                  )}
+                </div>
+              </div>
+          }
         </div>
 
       </div>
