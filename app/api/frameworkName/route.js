@@ -10,3 +10,18 @@ export async function GET(request) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
+
+// create a framework name
+export async function POST(request) {
+    try {
+        const { name } = await request.json();
+        const framework = await prisma.framework.create({
+            data: {
+                name,
+            },
+        });
+        return NextResponse.json(framework);
+    } catch (error) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+}

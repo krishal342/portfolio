@@ -7,7 +7,7 @@ const projectSection = () => {
 
   const [projects, setProjects] = useState([]);
   const [frameworkName, setFrameworkName] = useState([]);
-  const [activeTab, setActiveTab] = useState("Express.js");
+  const [activeTab, setActiveTab] = useState("ASP.NET Core");
   const [loading, setLoading] = useState(true);
 
 
