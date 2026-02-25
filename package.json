@@ -4,6 +4,7 @@
   "private": true,
   "type":"module",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
