@@ -18,7 +18,7 @@ const ContactSection = () => {
                 <div className="w-full pb-8 sm:pb-0 sm:pr-8 border-b sm:border-b-0 sm:border-r border-gray-300 flex flex-col items-center justify-center">
                     <span>Email</span>
                     <span className="cursor-pointer">
-                        <CopyContent content="krishal342@gmail.com" />
+                        <CopyContent content={process.env.EMAIL} />
                     </span>
                 </div>
 
@@ -26,14 +26,14 @@ const ContactSection = () => {
                 <div className="w-full py-8 sm:py-0 sm:px-8 border-b sm:border-b-0 sm:border-r border-gray-300 flex flex-col items-center justify-center">
                     <span>WhatsApp</span>
                     <span className="cursor-pointer">
-                        <CopyContent content="+977 9841995332" />
+                        <CopyContent content={process.env.PHONE} />
                     </span>
                 </div>
 
                 {/* Third block */}
                 <div className="w-full pt-8 sm:pt-0 sm:pl-8 flex justify-center items-center gap-8">
                     <a
-                        href="https://github.com/krishal342"
+                        href={process.env.GITHUB_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -42,7 +42,7 @@ const ContactSection = () => {
                         </svg>
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/krishal-deshemaru-78a8063a2/"
+                        href={process.env.PORTFOLIO_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
