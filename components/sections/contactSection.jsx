@@ -42,7 +42,7 @@ const ContactSection = () => {
                         </svg>
                     </a>
                     <a
-                        href={process.env.PORTFOLIO_LINK}
+                        href={process.env.LINKEDIN}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
